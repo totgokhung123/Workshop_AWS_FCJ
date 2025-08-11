@@ -1,6 +1,6 @@
 +++
-title = "Dọn dẹp tài nguyên  "
-date = 2021
+title = "Dọn dẹp tài nguyên "
+date = 2025
 weight = 6
 chapter = false
 pre = "<b>6. </b>"
@@ -8,76 +8,75 @@ pre = "<b>6. </b>"
 
 Chúng ta sẽ tiến hành các bước sau để xóa các tài nguyên chúng ta đã tạo trong bài thực hành này.
 
-#### Xóa EC2 instance
+#### Xóa IAM Role 
 
-1. Truy cập [giao diện quản trị dịch vụ EC2](https://console.aws.amazon.com/ec2/v2/home)
-  + Click **Instances**.
-  + Click chọn cả 2 instance **Public Linux Instance** và **Private Windows Instance**. 
-  + Click **Instance state**.
-  + Click **Terminate instance**, sau đó click **Terminate** để xác nhận.
-
-2. Truy cập [giao diện quản trị dịch vụ IAM](https://console.aws.amazon.com/iamv2/home#/home)
+1. Truy cập [giao diện quản trị dịch vụ IAM](https://console.aws.amazon.com/iamv2/home#/home)
   + Click **Roles**.
-  + Tại ô tìm kiếm , điền **SSM**.
-  + Click chọn **SSM-Role**.
-  + Click **Delete**, sau đó điền tên role **SSM-Role** và click **Delete** để xóa role.
+  + Tại ô tìm kiếm , tìm các role dùng cho Lambda.
+  ![alt text](/images/6.clean/image-3.png)
+  + Chon **Delete** sau đó điền tên role và click **Delete** để xóa role.
   
-![Clean](/images/6.clean/001-clean.png)
+![alt text](/images/6.clean/image-4.png)
 
-3. Click **Users**.
-  + Click chọn user **Portfwd**.
-  + Click **Delete**, sau đó điền tên user **Portfwd** và click **Delete** để xóa user.
+![alt text](/images/6.clean/image-5.png)
 
 #### Xóa S3 bucket
 
-1. Truy cập [giao diện quản trị dịch vụ System Manager - Session Manager](https://console.aws.amazon.com/systems-manager/session-manager).
-  + Click tab **Preferences**.
-  + Click **Edit**.
-  + Kéo chuột xuống dưới.
-  + Tại mục **S3 logging**.
-  + Bỏ chọn **Enable** để tắt tính năng logging.
-  + Kéo chuột xuống dưới.
-  + Click **Save**.
-
-2. Truy cập [giao diện quản trị dịch vụ S3](https://s3.console.aws.amazon.com/s3/home)
-  + Click chọn S3 bucket chúng ta đã tạo cho bài thực hành. ( Ví dụ : lab-fcj-bucket-0001 )
+1. Truy cập [giao diện quản trị dịch vụ S3](https://s3.console.aws.amazon.com/s3/home)
+  + Click chọn S3 bucket chúng ta đã tạo cho bài thực hành. (Ví dụ : totgo1, scenedetect-layer)
+  ![alt text](/images/6.clean/image.png)
   + Click **Empty**.
   + Điền **permanently delete**, sau đó click **Empty** để tiến hành xóa object trong bucket.
   + Click **Exit**.
 
-3. Sau khi xóa hết object trong bucket, click **Delete**
+2. Sau khi xóa hết object trong bucket, click **Delete**
 
-![Clean](/images/6.clean/002-clean.png)
+![alt text](/images/6.clean/image-1.png)
 
-4. Điền tên S3 bucket, sau đó click **Delete bucket** để tiến hành xóa S3 bucket.
+3. Điền tên S3 bucket, sau đó click **Delete bucket** để tiến hành xóa S3 bucket.
 
-![Clean](/images/6.clean/003-clean.png)
+![alt text](/images/6.clean/image-2.png)
 
-#### Xóa các VPC Endpoint
+#### Xóa SQS 
+1. Truy cập [giao diện quản trị dịch vụ SQS](https://console.aws.amazon.com/sqs/v2/home)
+   + Click **Queues**.
+   + Chọn hàng đợi chúng ta đã tạo cho bài thực hành.
+   ![alt text](/images/6.clean/image-6.png)
 
-1. Truy cập vào [giao diện quản trị dịch vụ VPC](https://console.aws.amazon.com/vpc/home)
-  + Click **Endpoints**.
-  + Chọn 4 endpoints chúng ta đã tạo cho bài thực hành bao gồm **SSM**, **SSMMESSAGES**, **EC2MESSAGES**, **S3GW**.
-  + Click **Actions**.
-  + Click **Delete VPC endpoints**.
+   + Click **Delete** để xóa hàng đợi.
 
-![Clean](/images/6.clean/004-clean.png)
+![alt text](/images/6.clean/image-7.png)
+#### Xóa Lambda 
+1. Truy cập [giao diện quản trị dịch vụ Lambda](https://console.aws.amazon.com/lambda/home)
+   + Click **Functions**.
+   + Chọn các hàm Lambda chúng ta đã tạo cho bài thực hành.
+   ![alt text](/images/6.clean/image-8.png)
 
-2. Tại ô confirm , điền **delete**.
-  + Click **Delete** để tiến hành xóa các endpoints.
+   + Click **Delete** để xóa hàm Lambda.
 
-3. Click biểu tượng refresh, kiểm tra tất cả các endpoints đã bị xóa trước khi làm bước tiếp theo.
+![alt text](/images/6.clean/image-9.png)
+#### Xóa API Gateway 
+1. Truy cập [giao diện quản trị dịch vụ API Gateway](https://console.aws.amazon.com/apigateway/home)
+   + Click **APIs**.
+   + Chọn API chúng ta đã tạo cho bài thực hành.
+   ![alt text](/images/6.clean/image-10.png)
 
-![Clean](/images/6.clean/005-clean.png)
+   + Click **Actions** và chọn **Delete API** để xóa API.
 
-#### Xóa VPC
+![alt text](/images/6.clean/image-11.png)
+#### Xóa DynamoDB 
+1. Truy cập [giao diện quản trị dịch vụ DynamoDB](https://console.aws.amazon.com/dynamodbv2/home)
+   + Click **Tables**.
+   + Chọn bảng chúng ta đã tạo cho bài thực hành.
+   ![alt text](/images/6.clean/image-12.png)
+   + Click **Delete** để xóa bảng.
+ 
+![alt text](/images/6.clean/image-13.png) 
+#### Xóa ECR
+1. Truy cập [giao diện quản trị dịch vụ ECR](https://console.aws.amazon.com/ecr/repositories)
+   + Click **Repositories**.
+   + Chọn kho chứa chúng ta đã tạo cho bài thực hành.
+   ![alt text](/images/6.clean/image-14.png)
+   + Click **Delete** để xóa kho chứa.
 
-1. Truy cập vào [giao diện quản trị dịch vụ VPC](https://console.aws.amazon.com/vpc/home)
-  + Click **Your VPCs**.
-  + Click chọn **Lab VPC**.
-  + Click **Actions**.
-  + Click **Delete VPC**.
-
-2. Tại ô confirm, điền **delete** để xác nhận, click **Delete** để thực hiện xóa **Lab VPC** và các tài nguyên liên quan.
-
-![Clean](/images/6.clean/006-clean.png)
+![alt text](/images/6.clean/image-15.png)

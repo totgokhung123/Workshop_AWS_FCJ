@@ -1,83 +1,83 @@
 +++
-title = "Clean up resources"
-date = 2022
+title = "Resource Cleanup"
+date = 2025
 weight = 6
 chapter = false
 pre = "<b>6. </b>"
 +++
 
-We will take the following steps to delete the resources we created in this exercise.
+We will follow these steps to delete the resources created during this workshop.
 
-#### Delete EC2 instance
+#### Delete IAM Roles
 
-1. Go to [EC2 service management console](https://console.aws.amazon.com/ec2/v2/home)
-   + Click **Instances**.
-   + Select both **Public Linux Instance** and **Private Windows Instance** instances.
-   + Click **Instance state**.
-   + Click **Terminate instance**, then click **Terminate** to confirm.
+1. Go to the [IAM Management Console](https://console.aws.amazon.com/iamv2/home#/home)
+  + Click **Roles**.
+  + In the search box, find the roles used for Lambda.
+  ![alt text](/images/6.clean/image-3.png)
+  + Click **Delete**, then enter the role name and click **Delete** to remove the role.
+  
+![alt text](/images/6.clean/image-4.png)
 
-2. Go to [IAM service management console](https://console.aws.amazon.com/iamv2/home#/home)
-   + Click **Roles**.
-   + In the search box, enter **SSM**.
-   + Click to select **SSM-Role**.
-   + Click **Delete**, then enter the role name **SSM-Role** and click **Delete** to delete the role.
+![alt text](/images/6.clean/image-5.png)
 
-![Clean](/images/6.clean/001-clean.png)
+#### Delete S3 Buckets
 
-3. Click **Users**.
-   + Click on user **Portfwd**.
-   + Click **Delete**, then enter the user name **Portfwd** and click **Delete** to delete the user.
+1. Go to the [S3 Management Console](https://s3.console.aws.amazon.com/s3/home)
+  + Click on the S3 buckets you created for the workshop (e.g., totgo1, scenedetect-layer).
+  ![alt text](/images/6.clean/image.png)
+  + Click **Empty**.
+  + Enter **permanently delete**, then click **Empty** to delete all objects in the bucket.
+  + Click **Exit**.
 
-#### Delete S3 bucket
+2. After deleting all objects in the bucket, click **Delete**.
 
-1. Access [System Manager - Session Manager service management console](https://console.aws.amazon.com/systems-manager/session-manager).
-   + Click the **Preferences** tab.
-   + Click **Edit**.
-   + Scroll down.
-   + In the section **S3 logging**.
-   + Uncheck **Enable** to disable logging.
-   + Scroll down.
-   + Click **Save**.
+![alt text](/images/6.clean/image-1.png)
 
-2. Go to [S3 service management console](https://s3.console.aws.amazon.com/s3/home)
-   + Click on the S3 bucket we created for this lab. (Example: lab-fcj-bucket-0001 )
-   + Click **Empty**.
-   + Enter **permanently delete**, then click **Empty** to proceed to delete the object in the bucket.
-   + Click **Exit**.
+3. Enter the name of the S3 bucket, then click **Delete bucket** to remove the S3 bucket.
 
-3. After deleting all objects in the bucket, click **Delete**
+![alt text](/images/6.clean/image-2.png)
 
-![Clean](/images/6.clean/002-clean.png)
+#### Delete SQS
+1. Go to the [SQS Management Console](https://console.aws.amazon.com/sqs/v2/home)
+   + Click **Queues**.
+   + Select the queue you created for the workshop.
+   ![alt text](/images/6.clean/image-6.png)
 
-4. Enter the name of the S3 bucket, then click **Delete bucket** to proceed with deleting the S3 bucket.
+   + Click **Delete** to remove the queue.
 
-![Clean](/images/6.clean/003-clean.png)
+![alt text](/images/6.clean/image-7.png)
+#### Delete Lambda Functions
+1. Go to the [Lambda Management Console](https://console.aws.amazon.com/lambda/home)
+   + Click **Functions**.
+   + Select the Lambda functions you created for the workshop.
+   ![alt text](/images/6.clean/image-8.png)
 
-#### Delete VPC Endpoints
+   + Click **Delete** to remove the Lambda function.
 
-1. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
-   + Click **Endpoints**.
-   + Select the 4 endpoints we created for the lab including **SSM**, **SSMMESSAGES**, **EC2MESSAGES**, **S3GW**.
-   + Click **Actions**.
-   + Click **Delete VPC endpoints**.
+![alt text](/images/6.clean/image-9.png)
+#### Delete API Gateway
+1. Go to the [API Gateway Management Console](https://console.aws.amazon.com/apigateway/home)
+   + Click **APIs**.
+   + Select the API you created for the workshop.
+   ![alt text](/images/6.clean/image-10.png)
 
-![Clean](/images/6.clean/004-clean.png)
+   + Click **Actions** and select **Delete API** to remove the API.
 
-2. In the confirm box, enter **delete**.
-   + Click **Delete** to proceed with deleting endpoints.
+![alt text](/images/6.clean/image-11.png)
+#### Delete DynamoDB
+1. Go to the [DynamoDB Management Console](https://console.aws.amazon.com/dynamodbv2/home)
+   + Click **Tables**.
+   + Select the table you created for the workshop.
+   ![alt text](/images/6.clean/image-12.png)
+   + Click **Delete** to remove the table.
+ 
+![alt text](/images/6.clean/image-13.png) 
+#### Delete ECR
+1. Go to the [ECR Management Console](https://console.aws.amazon.com/ecr/repositories)
+   + Click **Repositories**.
+   + Select the repository you created for the workshop.
+   ![alt text](/images/6.clean/image-14.png)
+   + Click **Delete** to remove the table.
 
-3. Click the refresh icon, check that all endpoints have been deleted before proceeding to the next step.
+![alt text](/images/6.clean/image-15.png)
 
-![Clean](/images/6.clean/005-clean.png)
-
-#### Delete VPC
-
-1. Go to [VPC service management console](https://console.aws.amazon.com/vpc/home)
-   + Click **Your VPCs**.
-   + Click on **Lab VPC**.
-   + Click **Actions**.
-   + Click **Delete VPC**.
-
-2. In the confirm box, enter **delete** to confirm, click **Delete** to delete **Lab VPC** and related resources.
-
-![Clean](/images/6.clean/006-clean.png)

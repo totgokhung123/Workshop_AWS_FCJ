@@ -7,17 +7,22 @@ pre : " <b> 2. </b> "
 ---
 
 {{% notice info %}}
-Bạn cần tạo sẵn 1 Linux instance thuộc public subnet và 1 Window instance thuộc private subnet để thực hiện bài thực hành này.
+Bạn cần chú ý các bước thao tác liên kết Bucket S3 với Layer , Lambda. 
 {{% /notice %}}
 
-Để tìm hiểu cách tạo các EC2 instance và VPC với public/private subnet các bạn có thể tham khảo bài lab :
-  - [Giới thiệu về Amazon EC2](https://000004.awsstudygroup.com/vi/)
-  - [Làm việc với Amazon VPC](https://000003.awsstudygroup.com/vi/)
+Để tìm hiểu cách tạo các IAM, S3, Lambda, SQS, DynamoDB các bạn có thể tham khảo bài lab :
+  - [Amazon IAM](https://000002.awsstudygroup.com/)
+  - [Amazon S3](https://000057.awsstudygroup.com/vi)
+  - [Amazon Lambda](https://000022.awsstudygroup.com/vi/)
+  - [Amazon SQS](https://000077.awsstudygroup.com/vi/)
+  - [Amazon DynamoDB](https://000060.awsstudygroup.com/vi/)
 
-Để sử dụng System Manager để quản lý window instance nói riêng và các instance nói chung của chúng ta trên AWS, ta cần phải cung cấp quyền cho các instance của chúng ta có thể làm việc với System Manager.Trong phần chuẩn bị này, chúng ta cũng sẽ tiến hành tạo IAM Role để cấp quyền cho các instance có thể làm việc với System Manager.
+Để triển khai hệ thống VideoSense trên AWS, bạn cần chuẩn bị các tài nguyên cơ bản như S3 Bucket, Lambda Function, SQS Queue, DynamoDB Table và cấu hình các quyền truy cập (IAM Role) phù hợp cho từng dịch vụ. Việc cấp quyền đúng sẽ đảm bảo các thành phần trong pipeline có thể giao tiếp và hoạt động tự động hóa, bảo mật.
 
-### Nội dung
-  - [Chuẩn bị VPC và EC2 Instance](2.1-createec2/)
-  - [Tạo IAM Role](2.2-createiamrole/)
+Trong phần chuẩn bị này, bạn sẽ tiếp thêm kiến thức thực hiện:
+- Tạo các IAM Role cần thiết cho Lambda, S3, SQS, DynamoDB.
+- Cấu hình các dịch vụ AWS để đảm bảo pipeline hoạt động liền mạch và an toàn.
+
+
 
   

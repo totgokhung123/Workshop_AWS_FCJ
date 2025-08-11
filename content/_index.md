@@ -4,18 +4,18 @@ date :  "`r Sys.Date()`"
 weight : 1 
 chapter : false
 ---
-# Work with Amazon System Manager - Session Manager
+# VideoSense: Serverless Video Content Search Engine with AWS Lambda & CLIP
 
 ### Overall
- In this lab, you'll learn the basics and practice of Amazon  System Manager - Session Manager
-. Perform creating public and private instance connections. 
+In this lab, you will practice using AWS serverless architecture to build a video processing and retrieval pipeline with the CLIP model.
 
-![ConnectPrivate](/images/arc-log.png) 
+![ConnectPrivate](/images/image-2.png) 
 
 ### Content
- 1. [Introduction ](1-introduce/)
- 2. [Preparation](2-prerequiste/)
- 3. [Connect to EC2 instance](3-accessibilitytoinstances/)
- 4. [Manage session logs](4-s3log/)
- 5. [Port Forwarding](5-Portfwd/)
+
+ 1. [Introduction](1-introduce/)
+ 2. [Preparation](2-Prerequiste/)
+ 3. [Uploads & Storages](3-Uploads_Storages/)
+ 4. [Video & Processing](4-Video_Processing/)
+ 5. [Searching](5-Searching/)
  6. [Clean up resources](6-cleanup/)

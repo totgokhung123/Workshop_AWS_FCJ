@@ -1,23 +1,21 @@
 ---
-title : "Manage session logs"
+title : "Video & Processing"
 date : "`r Sys.Date()`"
 weight : 4
 chapter : false
 pre : " <b> 4. </b> "
 ---
 
+After videos are uploaded to the system, the next stage is processing them to extract key frames for analysis and search. This process uses AWS Lambda to automatically perform scene detection, extract frames at intervals, compress images (WebP), and store them in S3. Video and frame metadata are saved to DynamoDB for later search steps.
 
-With Session Manager, we can view the history of connections to instances through **Session history**. However, we have not seen the details of the commands used in a session.
+![alt text](/images/4.s3/arc-4.png)
 
-![S3](/images/4.s3/001-s3.png)
-
-In this section, we will proceed to create an S3 bucket and configure the session logs feature to see the details of the commands used in the session.
-
-![port-fwd](/images/arc-log.png) 
+In this section, you will practice:
+- Creating an S3 bucket to store frames.
+- Configuring Lambda to automatically extract frames from videos.
+- Saving metadata to DynamoDB.
 
 ### Content:
 
-   - [Update IAM Role](./4.1-updateiamrole/)
-   - [Create **S3 Bucket**](./4.2-creates3bucket/)
-   - [Create S3 Gateway endpoint](./4.3-creategwes3)
-   - [Configure **Session logs**](./4.4-configsessionlogs/)
+  - [Quy trình xử lý video thành frame](./4.1-Create-S3-Lambda-DynamoDB/)
+  - [Testing trích xuất video](./4.2-Testing-processing/)

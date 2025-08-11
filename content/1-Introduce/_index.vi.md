@@ -5,18 +5,18 @@ weight : 1
 chapter : false
 pre : " <b> 1. </b> "
 ---
-**Session Manager** là một chức năng nằm trong dịch vụ System Manager của AWS, Session Manager cung cấp khả năng quản lý các máy chủ một cách an toàn mà **không cần mở port SSH, không cần Bastion Host hoặc quản lý SSH key**. 
-Session Manager cũng giúp dễ dàng tuân thủ các chính sách của công ty yêu cầu quyền truy cập có kiểm soát, đảm bảo việc bảo mật nghiêm ngặt và ghi log truy việc truy cập trong khi vẫn cung cấp cho người dùng cuối quyền truy cập đa nền tảng.
 
-Với việc sử dụng Session Manager, bạn sẽ có được những ưu điểm sau:
+![content](/images/image-2.png) 
 
-- Không cần phải mở cổng 22 cho giao thức SSH.
-- Có thể cấu hình để kết nối không cần đi ra ngoài internet.
-- Không cần quản lý private key của server để kết nối SSH.
-- Quản lý tập trung được user bằng việc sử dụng AWS IAM.
-- Truy cập tới server một cách dễ dàng và đơn giản bằng một cú click chuột.
-- Thời gian truy cập nhanh chóng hơn các phương thức truyền thống như SSH.
-- Hỗ trợ nhiều hệ điều hành khác nhau như Linux, Windows, MacOS.
-- Log lại được các phiên kết nối và các câu lệnh đã thực thi trong lúc kết nối tới server.
+**VideoSense** là một hệ thống tìm kiếm nội dung video sử dụng kiến trúc serverless trên AWS, kết hợp các dịch vụ như Lambda, S3, DynamoDB, SQS và mô hình AI CLIP để xử lý và tìm kiếm video hiệu quả, tiết kiệm chi phí.
 
-Với những ưu điểm trên, bạn có thể sử dụng Session Manager thay vì sử dụng kỹ thuật Bastion host giúp chúng ta tiết kiệm được thời gian và chi phí khi quản lý server Bastion.
+Với VideoSense, bạn sẽ trải nghiệm các ưu điểm nổi bật sau:
+
+- **Không cần quản lý server**: Toàn bộ pipeline xử lý và tìm kiếm video đều chạy trên các dịch vụ serverless của AWS.
+- **Tối ưu chi phí**: Chỉ trả tiền theo mức sử dụng, tiết kiệm đến 95% so với giải pháp truyền thống như SageMaker.
+- **Tìm kiếm thông minh**: Sử dụng mô hình CLIP để tìm kiếm video theo nội dung, sự kiện, hoặc mô tả tự nhiên.
+- **Tự động hóa toàn bộ quy trình**: Từ upload video, trích xuất frame, sinh embedding, lưu trữ metadata, đến tìm kiếm và trả kết quả.
+- **Khả năng mở rộng linh hoạt**: Hỗ trợ hàng ngàn video và truy vấn tìm kiếm đồng thời mà không lo nghẽn cổ chai.
+- **Bảo mật và giám sát**: Tích hợp CloudWatch, SNS để giám sát chi phí, cảnh báo và đảm bảo an toàn dữ liệu.
+
+Với những ưu điểm trên, VideoSense là lựa chọn lý tưởng cho các dự án AI, nghiên cứu, hoặc ứng dụng thực tế cần tìm kiếm nội dung video thông minh mà không tốn nhiều chi phí vận hành.

@@ -4,13 +4,13 @@ date :  "`r Sys.Date()`"
 weight : 1 
 chapter : false
 ---
-# Làm việc với Amazon System Manager - Session Manager
+# VideoSense: Serverless Video Content Search Engine với AWS Lambda & CLIP
 
 ### Tổng quan
 
- Trong bài lab này, bạn sẽ thực hành về Amazon System Manager - Session Management. Thực hành tạo kết nối đến máy chủ public và máy chủ private trong VPC.
+ Trong bài lab này, bạn sẽ thực hành sử dụng kiến trúc AWS serverless để xây dựng một pipeline xử lý và tìm kiếm video với mô hình CLIP "Video Event Retrieval with CLIP Model".
 
-![Lab](/images/image-2.png) 
+![content](/images/image-2.png) 
 
 ### Nội dung
 
